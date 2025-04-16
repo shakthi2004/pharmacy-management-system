@@ -114,28 +114,7 @@ Suppliers
 		<br>
 		
 		
-	<?php
-			include "config.php";
-			 
-			if(isset($_POST['add']))
-			{
-			$id = mysqli_real_escape_string($conn, $_REQUEST['sid']);
-			$name = mysqli_real_escape_string($conn, $_REQUEST['sname']);
-			$add = mysqli_real_escape_string($conn, $_REQUEST['sadd']);
-			$phno = mysqli_real_escape_string($conn, $_REQUEST['sphno']);
-			$mail = mysqli_real_escape_string($conn, $_REQUEST['smail']);
 
-			 
-			$sql = "INSERT INTO suppliers VALUES ($id, '$name','$add',$phno, '$mail')";
-			if(mysqli_query($conn, $sql)){
-				echo "<p style='font-size:8;'>Supplier details successfully added!</p>";
-			} else{
-				echo "<p style='font-size:8; color:red;'>Error! Check details.</p>";
-			}
-			}
-			 
-			$conn->close();
-	?>
 	
 	</div>
 			
