@@ -1,24 +1,3 @@
-<?php 
-
-	if(isset($_POST['search'])) {
-		
-		$search=$_POST['valuetosearch'];
-		$query="SELECT c_id, c_fname,c_lname,c_phno FROM `customer` 
-			WHERE CONCAT(c_id, c_fname,c_lname,c_phno) LIKE '%".$search."%';";
-		$search_result=filtertable($query);
-	}
-	
-	else {
-			$query="SELECT c_id, c_fname,c_lname,c_phno FROM `customer`";
-			$search_result=filtertable($query);
-	}
-	
-	function filtertable($query)
-	{	$conn = mysqli_connect("localhost", "root", "", "pharmacy");
-		$filter_result=mysqli_query($conn,$query);
-		return $filter_result;
-	}
-?>
 
 <!DOCTYPE html>
 <html>
