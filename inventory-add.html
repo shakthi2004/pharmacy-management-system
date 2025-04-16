@@ -122,30 +122,7 @@ Medicines
 		<br>
 		
 		
-	<?php
 	
-		include "config.php";
-		 
-		if(isset($_POST['add']))
-		{
-		$id = mysqli_real_escape_string($conn, $_REQUEST['medid']);
-		$name = mysqli_real_escape_string($conn, $_REQUEST['medname']);
-		$qty = mysqli_real_escape_string($conn, $_REQUEST['qty']);
-		$category = mysqli_real_escape_string($conn, $_REQUEST['cat']);
-		$sprice = mysqli_real_escape_string($conn, $_REQUEST['sp']);
-		$location = mysqli_real_escape_string($conn, $_REQUEST['loc']);
-
-		 
-		$sql = "INSERT INTO meds VALUES ($id, '$name', $qty,'$category',$sprice, '$location')";
-		if(mysqli_query($conn, $sql)){
-			echo "<p style='font-size:8;'>Medicine details successfully added!</p>";
-		} else{
-			echo "<p style='font-size:8; color:red;'>Error! Check details.</p>";
-		}
-		}
-		 
-		$conn->close();
-	?>
 		</div>
 	</div>
 			
