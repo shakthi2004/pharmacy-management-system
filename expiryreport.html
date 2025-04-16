@@ -85,31 +85,7 @@ Reports
 			<th>Expiry Date</th>
 		</tr>
 		
-	<?php
-	
-		include "config.php";
-		$result=mysqli_query($conn,"CALL `EXPIRY`();");
-		if ($result->num_rows > 0) { 
 
-		while($row = $result->fetch_assoc()) {
-			
-		echo "<tr>";
-			echo "<td>" . $row["p_id"]. "</td>";
-			echo "<td>" . $row["sup_id"]. "</td>";
-			echo "<td>" . $row["med_id"]. "</td>";
-			echo "<td>" . $row["p_qty"]. "</td>";
-			echo "<td>" . $row["p_cost"]. "</td>";
-			echo "<td>" . $row["pur_date"]. "</td>";
-			echo "<td>" . $row["mfg_date"] . "</td>";
-			echo "<td style='color:red;'>" . $row["exp_date"]. "</td>";
-		echo "</tr>";
-		}
-		echo "</table>";
-		} 
-
-		$conn->close();
-	
-	?>
 	
 </body>
 
