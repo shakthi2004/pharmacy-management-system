@@ -26,17 +26,7 @@ body {font-family:Arial;}
 			</div>
 	</div>
 
-	<?php
-	include "config.php";
-	session_start();
 	
-	$sql="SELECT E_FNAME from EMPLOYEE WHERE E_ID='$_SESSION[user]'";
-	$result=$conn->query($sql);
-	$row=$result->fetch_row();
-	
-	$ename=$row[0];
-	
-	?>
 
 	<div class="topnav">
 		<a href="logout1.php">Logout(signed in as <?php echo $ename; ?>)</a>
