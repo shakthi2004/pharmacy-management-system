@@ -83,36 +83,7 @@
 			<th>Action</th>
 		</tr>
 	
-	<?php
-	include "config.php";
-	
-		$sql = "SELECT med_id, med_name,med_qty,category,med_price,location_rack FROM meds";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0) {
-		
-		while($row = $result->fetch_assoc()) {
 
-		echo "<tr>";
-			echo "<td>" . $row["med_id"]. "</td>";
-			echo "<td>" . $row["med_name"] . "</td>";
-			echo "<td>" . $row["med_qty"]. "</td>";
-			echo "<td>" . $row["category"]. "</td>";
-			echo "<td>" . $row["med_price"] . "</td>";
-			echo "<td>" . $row["location_rack"]. "</td>";
-			echo "<td align=center>";
-						 
-				echo "<a class='button1 edit-btn' href=inventory-update.php?id=".$row['med_id'].">Edit</a>";
-			
-				echo "<a class='button1 del-btn' href=inventory-delete.php?id=".$row['med_id'].">Delete</a>";
-				
-			echo "</td>";
-		echo "</tr>";
-		}
-		echo "</table>";
-		} 
-
-	$conn->close();
-	?>
 	
 </body>
 
