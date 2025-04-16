@@ -90,41 +90,7 @@ Employees
 			<th>Action</th>
 		</tr>
 		
-	<?php
-	
-	include "config.php";
-	$sql = "SELECT e_id, e_fname, e_lname, bdate, e_age, e_sex, e_type, e_jdate, e_sal, e_phno, e_mail, e_add FROM employee where e_id<>1";
-	$result = $conn->query($sql);
-	
-	if ($result->num_rows > 0) {
-	
-	while($row = $result->fetch_assoc()) {
 
-	echo "<tr>";
-		echo "<td>" . $row["e_id"]. "</td>";
-		echo "<td>" . $row["e_fname"] . "</td>";
-		echo "<td>" . $row["e_lname"] . "</td>";
-		echo "<td>" . $row["bdate"] . "</td>";
-		echo "<td>" . $row["e_age"]. "</td>";
-		echo "<td>" . $row["e_sex"]. "</td>";
-		echo "<td>" . $row["e_type"]. "</td>";
-		echo "<td>" . $row["e_jdate"]. "</td>";
-		echo "<td>" . $row["e_sal"]. "</td>";
-		echo "<td>" . $row["e_phno"]. "</td>";
-		echo "<td>" . $row["e_mail"]. "</td>";
-		echo "<td>" . $row["e_add"]. "</td>";
-		echo "<td align=center>";
-		echo "<a class='button1 edit-btn' href=employee-update.php?id=".$row['e_id'].">Edit</a>";
-		echo "<a onclick='return confirm('Are you sure to delete?');' class='button1 del-btn' href=employee-delete.php?id=".$row['e_id'].">Delete</a>";
-		echo "</td>";
-	echo "</tr>";
-	}
-	echo "</table>";
-} 
-
-	$conn->close();
-	
-	?>
 	
 </body>
 
