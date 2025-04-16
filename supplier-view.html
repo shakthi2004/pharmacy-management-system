@@ -83,34 +83,6 @@
 			<th>Action</th>
 		</tr>
 		
-	<?php
-	
-	include "config.php";
-	$sql = "SELECT sup_id,sup_name,sup_add,sup_phno,sup_mail FROM suppliers";
-	$result = $conn->query($sql);
-	
-	if ($result->num_rows > 0) {
-	
-	while($row = $result->fetch_assoc()) {
-
-	echo "<tr>";
-		echo "<td>" . $row["sup_id"]. "</td>";
-		echo "<td>" . $row["sup_name"] . "</td>";
-		echo "<td>" . $row["sup_add"]. "</td>";
-		echo "<td>" . $row["sup_phno"]. "</td>";
-		echo "<td>" . $row["sup_mail"]. "</td>";
-		echo "<td align=center>";
-		echo "<a class='button1 edit-btn' href=supplier-update.php?id=".$row['sup_id'].">Edit</a>";
-		echo "<a class='button1 del-btn' href=supplier-delete.php?id=".$row['sup_id'].">Delete</a>";
-		echo "</td>";
-	echo "</tr>";
-	}
-	echo "</table>";
-	} 
-
-	$conn->close();
-	
-	?>
 	
 </body>
 
