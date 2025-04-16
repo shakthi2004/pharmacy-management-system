@@ -1,14 +1,3 @@
-<?php
-	include "config.php";
-	
-	if(isset($_GET['id']))
-	{
-		$id=$_GET['id'];
-		$qry1="SELECT * FROM meds WHERE med_id='$id'";
-		$result = $conn->query($qry1);
-		$row = $result -> fetch_row();
-	}
-?>
 
 <!DOCTYPE html>
 <html>
